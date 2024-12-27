@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fortissimo Challenge Banner</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Fira Code', monospace; /* Apply Fira Code font */
+                color: #40391d; /* Set text color to a dark brown */
+                background-color: #f7f9a1; /* Set background to soft yellow */
+                line-height: 1.6; /* Increase line height for better readability */
+            }
+
+            .page-content {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                margin: 0 10%;
+                color: #40391d;
+                text-align: left;
+                background-color: #f7f9a1;
+                padding-top: 5rem; /* Add top padding to avoid navbar overlap */
+            }
+
+            .text-image-pair {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            .text-image-pair:nth-child(even) {
+                flex-direction: row-reverse; /* Reverse order for alternating layout */
+            }
+
+            .text-section {
+                flex: 1;
+                padding: 1rem;
+                font-size: 1rem; /* Adjust font size for readability */
+            }
+
+            .image-section {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .image-section img {
+                max-width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+
+            @media (max-width: 768px) {
+                .text-image-pair {
+                    flex-direction: column; /* Stack elements vertically on smaller screens */
+                }
+
+                .text-image-pair:nth-child(even) {
+                    flex-direction: column; /* Ensure consistent stacking on smaller screens */
+                }
+
+                .image-section img {
+                    max-height: 200px; /* Reduce image size on smaller screens */
+                }
+            }
+            figcaption {
+                text-align: center;   /* Center-align the caption text */
+                font-size: 0.9rem;     /* Adjust font size */
+                color: #555;           /* Set caption text color */
+                margin-top: 1rem;    /* Add space between the image and the caption */
+                width: 70%;           /* Ensure the caption takes the full width */
+            }
+        </style>
+    </head>
+    <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+<body>
+    <div id="navbar"></div>
+    <div class="page-content">
+        <div class="text-image-pair">
+            <div class="text-section">
+                <p>My name is Hayden Chen. I was born with profound hearing loss in both ears caused by a mutation in the GJB2 gene. My parents didn’t suspect a thing until I was around four months old because of how I had passed the newborn hearing screenings. So when they did come to realize, it was as if their world had suddenly ended.</p>
+            </div>
+            <div class="image-section">
+                <!-- Anchor tag to make image clickable -->
+                <a href="https://online.flippingbook.com/view/1072541132/i/" target="_blank"> <!-- Replace with your URL -->
+                    <img src="images/healthykids.png" alt="Image Description">
+                    <!-- Caption under the image -->
+                    <figcaption>Hayden's Healthy Kids Magazine feature</figcaption>
+                </a>
+            </div>
+        </div>
+        <div class="text-image-pair">
+            <div class="text-section">
+                <p>Their grief hadn’t subsided, but my parents began searching for ways. They brought me to Taiwan in hopes of having a better hearing test result and perhaps get some advice. This didn’t work out, but the hospital staff was very encouraging and tried their best to console my parents. When we got back to the US, Rady Children’s Hospital told us about the then-novel cochlear implantation option that we eventually decided on, and that decision has shaped my entire life.</p>
+            </div>
+            <div class="image-section">
+                    <img src="images/implanted.png" alt="Image Description">
+            </div>
+        </div>
+        <!-- Add more pairs as needed -->
+        <div class="text-image-pair">
+            <div class="text-section">
+                <p>I’ve heard the story many times, so I decided to do something about it. In the summer of 2023, my dad (a professional violist) enlisted the help of his friends in Taiwan to host a benefit concert for the hearing foundation in Taipei that had helped our family at our lowest point after learning of my hearing loss. That concert, in which I played cello, included solo/chamber instrumental music, and it attracted lots of support and donations for the hearing foundation. I thought, why not do something similar back in the US for Rady Children’s? After all, they were the ones who had saved us all from falling into an inescapable void back when I was a few months old.</p>
+            </div>
+            <div class="image-section">
+                <img src="https://via.placeholder.com/300" alt="Placeholder image">
+            </div>
+        </div>
+        <div class="text-image-pair">
+            <div class="text-section">
+<p>In times like these, anyone would need encouragement and expertise they could easily rely on. Besides getting us back on track, Rady’s had showered us with their support both before and after my implantation surgery. They also played a big part in my learning to listen with my new devices and talk.
+    It was time to give back to the people who had helped me so much earlier on. In September 2023, I got together with some of my friends at school, and together we started Fortissimo Challenge. All of us had musical backgrounds and could play instruments reasonably well, and we together agreed to practice solos and chamber music in ensembles and perform concerts for various audiences to not simply raise money for Rady’s but also give back to the community as whole. </p>            </div>
+            <div class="image-section">
+                <img src="https://via.placeholder.com/300" alt="Placeholder image">
+            </div>
+        </div>
+        <div class="text-image-pair">
+            <div class="text-section">
+<p>At first, we struggled to kickstart the practice sessions for lack of motivation, but this was instantly fixed when we set down a hard date for our first concert and started actually focusing. Larger practices have been at my house this past year, and while one group would be practicing, other club members would be talking and joking quietly on the side while munching on pizza. These practice sessions have brought us all closer together, and our bonds are becoming stronger and stronger.
+</p>
+            </div>
+            <div class="image-section">
+                <img src="https://via.placeholder.com/300" alt="Placeholder image">
+            </div>
+        </div>
+        <div class="text-image-pair">
+            <div class="text-section">
+                <p>From Fortissimo Challenge's beginning days, we have gradually expanded our outreach efforts to include performing in cultural festivals and hosting instrument expositions for younger students, hoping to provide a spark for their potentially lifelong musical journey.</p>
+            </div>
+            <div class="image-section">
+                <img src="https://via.placeholder.com/300" alt="Placeholder image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
