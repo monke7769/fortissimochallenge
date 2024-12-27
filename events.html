@@ -1,15 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortissimo Challenge Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fira Code', monospace;
+            color: #40391d; /* Set text color to a dark brown */
+            background-color: #f7f9a1; /* Set background to soft yellow */
+            line-height: 1.6; /* Increase line height for more spacing between lines */
+        }
+
+        body .banner {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            background-image: url('images/IMG_0282.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            will-change: background-position;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #714b38;
+        }
+        
+        .content h1 {
+            font-family: 'Satisfy', cursive; /* Apply font to h1 */
+            font-size: 5rem; /* Adjusted to match h1 styling */
+            margin: 0;
+            text-shadow: 0px 0px 10px #f26666; /* Add text shadow */
+            color: #e1a948; /* Apply golden color to h1 */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 1rem 0; /* Increase margin for more spacing between paragraphs */
+            color: #40391d; /* Set paragraph text color to dark brown */
+        }
+
+        .page-content {
+            display: flex;
+            padding: 2rem;
+            margin: 0 10%; /* Add space on both sides to expand content */
+            color: #40391d; /* Set text color for content */
+            text-align: left;
+            background-color: #f7f9a1; /* Set background of content section to soft yellow */
+        }
+
+        .page-content .text-section {
+            flex: 1;
+            padding-right: 2rem; /* Space between text and the GIF */
+        }
+
+        .page-content h2 {
+            margin-bottom: 1.5rem; /* Add space below h2 elements */
+            font-size: 2rem;
+            color: #40391d; /* Set color of h2 text to dark brown */
+        }
+
+        .page-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .page-content li {
+            font-size: 1.2rem;
+            margin-bottom: 1rem; /* Increase space between list items */
+            color: #40391d; /* Set color of list items to dark brown */
+        }
+
+        .page-content .gif-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-content .gif-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .page-content {
+                padding: 1rem;
+                margin: 0; /* Remove side margin for smaller screens */
+                flex-direction: column; /* Stack text and GIF vertically */
+            }
+
+            .page-content .text-section {
+                padding-right: 0;
+            }
+
+            .page-content .gif-section {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <script>
+        // load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+        document.addEventListener('scroll', () => {
+            const banner = document.querySelector('.banner');
+            const scrollY = window.scrollY;
+            const bannerHeight = banner.offsetHeight;
+
+            // Adjust the background position to create a parallax effect
+            const positionY = Math.min(scrollY * 0.5, bannerHeight);
+            banner.style.backgroundPosition = `center ${-positionY}px`;
+        });
+    </script>
+</head>
 <body>
     <div id="navbar"></div>
     <div class="banner">
         <div class="content">
-            <h1>Placeholder Page</h1>
+            <h1>Past Events</h1>
             <p></p>
         </div>
     </div>
     <div class="page-content">
         <div class="text-section">
-            <h2>About Us</h2>
-            <p>We are a nonprofit founded and led by high school students with an unyielding drive to spread our passion for the art of music to the community through music fundraising and charity projects while inspiring others to do the same. We envision a world in which every child, no matter their background, will be blessed with a bright future.</p>
+            <h2>January 2024</h2>
+            <p>Benefit Concert at Rancho Bernardo Library</p>
         </div>
         <div class="gif-section">
             <img src="images/fc_logo.gif" alt="Fortissimo Challenge GIF">
