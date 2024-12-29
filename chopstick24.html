@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortissimo Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            background-color: #f7f9a1;
+            background-image: url('images/IMG_0282.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            text-align: center;
+            color: #40391d;
+            width: 80%;
+        }
+
+        .content h1 {
+            font-family: 'Satisfy', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #e1a948;
+            text-shadow: 0px 0px 10px #f26666;
+        }
+
+        .section {
+            padding: 2rem;
+            text-align: center;
+            background-color: #f7f9a1;
+        }
+
+        .split-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 2rem;
+            gap: 2rem;
+            background-color: #f7f9a1;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 50%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .arrow {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .up-arrow {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .down-arrow {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #carousel {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s ease;
+            height: fit-content;
+        }
+
+        #carousel img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .video-section {
+            width: 50%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .split-section {
+                flex-direction: column;
+            }
+
+            .carousel-wrapper {
+                width: 100%;
+                height: 50vh;
+            }
+
+            .video-section {
+                width: 100%;
+            }
+
+            iframe {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="banner" style="background-image: url('chopstick2024images/banner.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+        <div class="content">
+            <h1>February 2024</h1>
+        </div>
+    </div>
+
+    <div class="section">
+
+        <h1>Chopstick Festival 2024</h1>
+        <h2>Club Performance for Chinese Cultural Cultural Festival</h2>
+        <p>Feb 9, 2024</p>
+        <div class="split-section">
+            <div class="carousel-wrapper">
+                <button class="arrow up-arrow">&uarr;</button>
+                <div id="carousel">
+                    <img src="chopstick2024images/a.jpg" alt="Image">
+                    <img src="chopstick2024images/b.png" alt="Image">
+                    <img src="chopstick2024images/c.png" alt="Image">
+                    <img src="chopstick2024images/d.png" alt="Image">
+                    <img src="chopstick2024images/e.png" alt="Image">
+                    <img src="chopstick2024images/f.png" alt="Image">
+                </div>
+                <button class="arrow down-arrow">&darr;</button>
+            </div>
+            <div class="video-section">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const images = carousel.querySelectorAll('img');
+        const upArrow = document.querySelector('.up-arrow');
+        const downArrow = document.querySelector('.down-arrow');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const imageHeight = images[0].clientHeight;
+            carousel.style.transform = `translateY(-${currentIndex * imageHeight}px)`;
+        }
+
+        function moveUp() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
+        function moveDown() {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+
+        upArrow.addEventListener('click', moveUp);
+        downArrow.addEventListener('click', moveDown);
+
+        window.addEventListener('resize', updateCarousel);
+
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+        document.addEventListener('scroll', () => {
+            const banner = document.querySelector('.banner');
+            const scrollY = window.scrollY;
+            const bannerHeight = banner.offsetHeight;
+
+            // Adjust the background position to create a parallax effect
+            const positionY = Math.min(scrollY * 0.5, bannerHeight);
+            banner.style.backgroundPosition = `center ${-positionY}px`;
+        });
+    </script>
+</body>
+</html>

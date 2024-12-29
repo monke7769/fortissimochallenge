@@ -3,122 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortissimo Challenge Banner</title>
+    <title>Fortissimo Challenge</title>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Fira Code', monospace;
-            color: #40391d; /* Set text color to a dark brown */
-            background-color: #f7f9a1; /* Set background to soft yellow */
-            line-height: 1.6; /* Increase line height for more spacing between lines */
+            font-family: Arial, sans-serif;
         }
 
-        body .banner {
+        .banner {
             position: relative;
             width: 100%;
             height: 80vh;
             overflow: hidden;
+            background-color: #f7f9a1;
             background-image: url('images/IMG_0282.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
             background-position: center;
-            will-change: background-position;
-        }
-
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #714b38;
-        }
-        
-        .content h1 {
-            font-family: 'Satisfy', cursive; /* Apply font to h1 */
-            font-size: 5rem; /* Adjusted to match h1 styling */
-            margin: 0;
-            text-shadow: 0px 0px 10px #f26666; /* Add text shadow */
-            color: #e1a948; /* Apply golden color to h1 */
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 1rem 0; /* Increase margin for more spacing between paragraphs */
-            color: #40391d; /* Set paragraph text color to dark brown */
-        }
-
-        .page-content {
-            display: flex;
-            padding: 2rem;
-            margin: 0 10%; /* Add space on both sides to expand content */
-            color: #40391d; /* Set text color for content */
-            text-align: left;
-            background-color: #f7f9a1; /* Set background of content section to soft yellow */
-        }
-
-        .page-content .text-section {
-            flex: 1;
-            padding-right: 2rem; /* Space between text and the GIF */
-        }
-
-        .page-content h2 {
-            margin-bottom: 1.5rem; /* Add space below h2 elements */
-            font-size: 2rem;
-            color: #40391d; /* Set color of h2 text to dark brown */
-        }
-
-        .page-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .page-content li {
-            font-size: 1.2rem;
-            margin-bottom: 1rem; /* Increase space between list items */
-            color: #40391d; /* Set color of list items to dark brown */
-        }
-
-        .page-content .gif-section {
-            flex: 1;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .page-content .gif-section img {
-            max-width: 100%;
+        .content {
+            text-align: center;
+            color: #40391d;
+            width: 80%;
+        }
+
+        .content h1 {
+            font-family: 'Satisfy', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #e1a948;
+            text-shadow: 0px 0px 10px #f26666;
+        }
+
+        .section {
+            padding: 2rem;
+            text-align: center;
+            background-color: #f7f9a1;
+        }
+
+        .split-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 2rem;
+            gap: 2rem;
+            background-color: #f7f9a1;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 50%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .arrow {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .up-arrow {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .down-arrow {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #carousel {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s ease;
+            height: fit-content;
+        }
+
+        #carousel img {
+            width: 100%;
             height: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .video-section {
+            width: 50%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .split-section {
+                flex-direction: column;
             }
 
-            p {
-                font-size: 1rem;
+            .carousel-wrapper {
+                width: 100%;
+                height: 50vh;
             }
 
-            .page-content {
-                padding: 1rem;
-                margin: 0; /* Remove side margin for smaller screens */
-                flex-direction: column; /* Stack text and GIF vertically */
+            .video-section {
+                width: 100%;
             }
 
-            .page-content .text-section {
-                padding-right: 0;
-            }
-
-            .page-content .gif-section {
-                margin-top: 1rem;
+            iframe {
+                height: 50vh;
             }
         }
     </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="banner" style="background-image: url('images/IMG_0282.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+        <div class="content">
+            <h1>Past Events</h1>
+        </div>
+    </div>
+    <div class="section">
+        <a href="chopstick24.html">
+            <h1>Chopstick Festival</h1>
+        </a>
+            <h2>Club Performance for Chinese Cultural Cultural Festival</h2>
+            <p>Feb 9, 2024</p>
+        <a href="jan24.html">
+            <h1>Concert at Scripps Miramar Ranch Library</h1>
+        </a>
+            <h2>Benefit Concert for Rady Children's</h2>
+            <p>Jan 19, 2024</p>
+    </div>
+    
+
     <script>
-        // load navbar
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
@@ -134,23 +169,5 @@
             banner.style.backgroundPosition = `center ${-positionY}px`;
         });
     </script>
-</head>
-<body>
-    <div id="navbar"></div>
-    <div class="banner">
-        <div class="content">
-            <h1>Past Events</h1>
-            <p></p>
-        </div>
-    </div>
-    <div class="page-content">
-        <div class="text-section">
-            <h2>January 2024</h2>
-            <p>Benefit Concert at Rancho Bernardo Library</p>
-        </div>
-        <div class="gif-section">
-            <img src="images/fc_logo.gif" alt="Fortissimo Challenge GIF">
-        </div>
-    </div>
 </body>
 </html>
