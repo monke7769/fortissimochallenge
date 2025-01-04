@@ -10,21 +10,23 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-
         .banner {
             position: relative;
             width: 100%;
-            height: 80vh;
+            height: 100vh; /* Full height of the viewport */
             overflow: hidden;
             background-color: #f7f9a1;
-            background-image: url('images/IMG_0282.jpg');
+            background-image: url('may2024images/15.JPG');
             background-size: cover;
-            background-position: center;
+            background-position: top center; /* Align the image to the top */
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
+            /* Remove parallax effect */
+            background-attachment: scroll; /* This prevents the parallax effect */
         }
+         
 
         .content {
             text-align: center;
@@ -91,12 +93,12 @@
         #carousel {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align images to the top */
+            align-items: center; /* Center align images */
             transition: transform 0.5s ease;
             height: fit-content;
             overflow: hidden; /* Ensure no overflow */
-            margin-top: 0; /* Optional spacing adjustment to lift the images */
-        }        
+        }
+        
         
         #carousel img {
             width: 100%;
@@ -105,7 +107,7 @@
             flex-shrink: 0;
             padding: 10px; /* Optional spacing around images */
         }
-
+        
         .video-section {
             width: 50%;
         }
@@ -138,72 +140,41 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <div class="banner" style="background-image: url('may2024images/15.JPG'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+    <div class="banner" style="background-image: url('dec2024images/IMG_2692.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
         <div class="content">
-            <h1>May 2024</h1>
+            <h1>December 2024</h1>
         </div>
     </div>
 
     <div class="section">
 
-        <h1>Concert at Ronald McDonald House San Diego</h1>
-        <h2>Charity Concert at RMHCSD</h2>
-        <p>May 25, 2024</p>
+        <h1>Holiday Concert at Ronald McDonald House</h1>
+        <h2>Winter/Holiday Charity Concert</h2>
+        <p>Dec 22, 2024</p>
+        <p>Our first underclassmen-only & wind/brass quartet!</p>
         <div class="split-section">
             <div class="carousel-wrapper">
                 <button class="arrow up-arrow">&uarr;</button>
                 <div id="carousel">
-                    <img src="may2024images/1.jpg" alt="Image">
-                    <img src="may2024images/3.jpg" alt="Image">
-                    <img src="may2024images/4.jpg" alt="Image">
-                    <img src="may2024images/5.jpg" alt="Image">
-                    <img src="may2024images/6.jpg" alt="Image">
-                    <img src="may2024images/7.jpg" alt="Image">
-                    <img src="may2024images/8.jpg" alt="Image">
-                    <img src="may2024images/9.jpg" alt="Image">
-                    <img src="may2024images/10.jpg" alt="Image">
-                    <img src="may2024images/11.jpg" alt="Image">
-                    <img src="may2024images/12.jpg" alt="Image">
-                    <img src="may2024images/13.jpg" alt="Image">
-                    <img src="may2024images/14.jpg" alt="Image">
-                    <img src="may2024images/15.jpg" alt="Image">
-                    <img src="may2024images/16.jpg" alt="Image">
-                    <img src="may2024images/17.jpg" alt="Image">
-                    <img src="may2024images/18.jpg" alt="Image">
-                    <img src="may2024images/19.jpg" alt="Image">
-                    <img src="may2024images/20.jpg" alt="Image">
-                    <img src="may2024images/21.jpg" alt="Image">
-                    <img src="may2024images/22.jpg" alt="Image">
-                    <img src="may2024images/23.jpg" alt="Image">
-                    <img src="may2024images/24.jpg" alt="Image">
-                    <img src="may2024images/25.jpg" alt="Image">
-                    <img src="may2024images/27.jpg" alt="Image">
-                    <img src="may2024images/28.jpg" alt="Image">
-                    <img src="may2024images/29.jpg" alt="Image">
-                    <img src="may2024images/30.jpg" alt="Image">
-                    <img src="may2024images/31.jpg" alt="Image">
-                    <img src="may2024images/32.jpg" alt="Image">
-                    <img src="may2024images/33.jpg" alt="Image">
-                    <img src="may2024images/34.jpg" alt="Image">
-                    <img src="may2024images/35.jpg" alt="Image">
-                    <img src="may2024images/36.jpg" alt="Image">
-                    <img src="may2024images/37.jpg" alt="Image">
-                    <img src="may2024images/38.jpg" alt="Image">
-                    <img src="may2024images/39.jpg" alt="Image">
-                    <img src="may2024images/40.jpg" alt="Image">
-                    <img src="may2024images/41.jpg" alt="Image">
-                    <img src="may2024images/42.jpg" alt="Image">
-                    <img src="may2024images/43.jpg" alt="Image">
-                    <img src="may2024images/44.jpg" alt="Image">
-                    <img src="may2024images/45.jpg" alt="Image">
-                    <img src="may2024images/46.jpg" alt="Image">
-                    <img src="may2024images/47.jpg" alt="Image">
-                    <img src="may2024images/48.jpg" alt="Image">
+                    <img src="dec2024images/IMG_2619.png" alt="Image">
+                    <img src="dec2024images/IMG_2621.png" alt="Image">
+                    <img src="dec2024images/IMG_2628.png" alt="Image">
+                    <img src="dec2024images/IMG_2630.png" alt="Image">
+                    <img src="dec2024images/IMG_2631.png" alt="Image">
+                    <img src="dec2024images/IMG_2636.png" alt="Image">
+                    <img src="dec2024images/IMG_2645.png" alt="Image">
+                    <img src="dec2024images/IMG_2684.png" alt="Image">
+                    <img src="dec2024images/IMG_2687.png" alt="Image">
+                    <img src="dec2024images/IMG_2692.png" alt="Image">
+                    <img src="dec2024images/IMG_2709.png" alt="Image">
+                    <img src="dec2024images/IMG_2716.png" alt="Image">
+                    <img src="dec2024images/IMG_2719.png" alt="Image">
+                    <img src="dec2024images/IMG_2728.png" alt="f14g{y0u_r_g00d_@7_7h15}">
                 </div>
                 <button class="arrow down-arrow">&darr;</button>
             </div>
             <div class="video-section">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5JJMNqucjEk?si=a7EtA7gQQnEaUCm6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ypmN1J3Xdfw?si=uE9lfBIAzOM_bS1x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -274,23 +245,25 @@
                 document.getElementById('navbar').innerHTML = data;
             });
     
-            document.addEventListener('DOMContentLoaded', () => {
-                const banner = document.querySelector('.banner');
-                const bannerHeight = banner.offsetHeight;
-            
-                // Ensure the banner starts with its top aligned to the top of the page
-                banner.style.backgroundPosition = 'top center';
-            
-                // Parallax effect on scroll
-                document.addEventListener('scroll', () => {
-                    const scrollY = window.scrollY;
-            
-                    // Adjust the background position to create a parallax effect
-                    // The background should move at half the scroll speed
-                    const positionY = Math.min(scrollY * 0.5, bannerHeight);
-                    banner.style.backgroundPosition = `center ${-positionY}px`;
-                });
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.querySelector('.banner');
+            const bannerHeight = banner.offsetHeight;
+        
+            // Ensure the banner starts with its top aligned to the top of the page
+            banner.style.backgroundPosition = 'top center';
+        
+            // Parallax effect on scroll
+            document.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+        
+                // Adjust the background position to create a parallax effect
+                // The background should move at half the scroll speed
+                const positionY = Math.min(scrollY * 0.5, bannerHeight);
+                banner.style.backgroundPosition = `center ${-positionY}px`;
             });
+        });
+            
     </script>
+    
 </body>
 </html>

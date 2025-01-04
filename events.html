@@ -140,16 +140,31 @@
         </div>
     </div>
     <div class="section">
+        <a href="dec24.html">
+            <h1>Holiday Concert at Ronald McDonald House</h1>
+        </a>
+            <h2>Winter/Holiday Concert 2024</h2>
+            <p>December 22, 2024</p>
+        <a href="aug24.html">
+            <h1>Instrument Exposition Summer 2024</h1>
+        </a>
+            <h2>Instrument Expo at 4S Ranch Library</h2>
+            <p>August 3, 2024</p>
+        <a href="may24.html">
+            <h1>Concert at Ronald McDonald House San Diego</h1>
+        </a>
+            <h2>Charity Concert at RMHCSD</h2>
+            <p>May 25, 2024</p>
         <a href="feb24.html">
             <h1>Chopstick Festival</h1>
         </a>
-            <h2>Club Performance for Chinese Cultural Cultural Festival</h2>
-            <p>Feb 9, 2024</p>
+            <h2>Club Performance for Chinese Cultural Festival</h2>
+            <p>February 9, 2024</p>
         <a href="jan24.html">
             <h1>Concert at Scripps Miramar Ranch Library</h1>
         </a>
             <h2>Benefit Concert for Rady Children's</h2>
-            <p>Jan 19, 2024</p>
+            <p>January 19, 2024</p>
     </div>
     
 
@@ -159,14 +174,22 @@
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             })
-        document.addEventListener('scroll', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const banner = document.querySelector('.banner');
-            const scrollY = window.scrollY;
             const bannerHeight = banner.offsetHeight;
-
-            // Adjust the background position to create a parallax effect
-            const positionY = Math.min(scrollY * 0.5, bannerHeight);
-            banner.style.backgroundPosition = `center ${-positionY}px`;
+        
+            // Ensure the banner starts with its top aligned to the top of the page
+            banner.style.backgroundPosition = 'top center';
+        
+            // Parallax effect on scroll
+            document.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+        
+                // Adjust the background position to create a parallax effect
+                // The background should move at half the scroll speed
+                const positionY = Math.min(scrollY * 0.5, bannerHeight);
+                banner.style.backgroundPosition = `center ${-positionY}px`;
+            });
         });
     </script>
 </body>

@@ -91,15 +91,19 @@
         #carousel {
             display: flex;
             flex-direction: column;
+            align-items: flex-start; /* Align images to the top */
             transition: transform 0.5s ease;
             height: fit-content;
-        }
-
+            overflow: hidden; /* Ensure no overflow */
+            margin-top: 0; /* Optional spacing adjustment to lift the images */
+        }        
+        
         #carousel img {
             width: 100%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain; /* Prevent cropping */
             flex-shrink: 0;
+            padding: 10px; /* Optional spacing around images */
         }
 
         .video-section {
@@ -181,45 +185,81 @@
         const upArrow = document.querySelector('.up-arrow');
         const downArrow = document.querySelector('.down-arrow');
         let currentIndex = 0;
-
+    
         function updateCarousel() {
             const imageHeight = images[0].clientHeight;
             carousel.style.transform = `translateY(-${currentIndex * imageHeight}px)`;
         }
-
+    
         function moveUp() {
             if (currentIndex > 0) {
                 currentIndex--;
                 updateCarousel();
             }
         }
-
+    
         function moveDown() {
             if (currentIndex < images.length - 1) {
                 currentIndex++;
                 updateCarousel();
             }
         }
-
+    
+        // Wait for all images to load before calculating heights
+        function initCarousel() {
+            let loadedImages = 0;
+    
+            images.forEach((img, index) => {
+                img.onload = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        // Once all images are loaded, set consistent height
+                        const maxHeight = Math.max(...Array.from(images).map(img => img.clientHeight));
+                        images.forEach(img => {
+                            img.style.height = `${maxHeight}px`; // Set uniform height
+                        });
+                        updateCarousel(); // Initialize carousel position
+                    }
+                };
+    
+                // Handle the case where an image fails to load
+                img.onerror = () => {
+                    console.error(`Failed to load image at index ${index}: ${img.src}`);
+                };
+            });
+        }
+    
         upArrow.addEventListener('click', moveUp);
         downArrow.addEventListener('click', moveDown);
-
+    
         window.addEventListener('resize', updateCarousel);
-
+    
+        // Initialize the carousel
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
-            })
-        document.addEventListener('scroll', () => {
-            const banner = document.querySelector('.banner');
-            const scrollY = window.scrollY;
-            const bannerHeight = banner.offsetHeight;
-
-            // Adjust the background position to create a parallax effect
-            const positionY = Math.min(scrollY * 0.5, bannerHeight);
-            banner.style.backgroundPosition = `center ${-positionY}px`;
-        });
+            });
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                const banner = document.querySelector('.banner');
+                const bannerHeight = banner.offsetHeight;
+            
+                // Ensure the banner starts with its top aligned to the top of the page
+                banner.style.backgroundPosition = 'top center';
+            
+                // Parallax effect on scroll
+                document.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+            
+                    // Adjust the background position to create a parallax effect
+                    // The background should move at half the scroll speed
+                    const positionY = Math.min(scrollY * 0.5, bannerHeight);
+                    banner.style.backgroundPosition = `center ${-positionY}px`;
+                });
+            });
     </script>
 </body>
 </html>
