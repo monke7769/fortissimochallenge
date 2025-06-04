@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fortissimo Challenge Banner</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Fira Code', monospace; /* Apply Fira Code font */
+                color: #40391d; /* Set text color to a dark brown */
+                background-color: #f7f9a1; /* Set background to soft yellow */
+                line-height: 1.6; /* Increase line height for better readability */
+            }
+
+            .page-content {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                margin: 0 10%;
+                color: #40391d;
+                text-align: left;
+                background-color: #f7f9a1;
+                padding-top: 5rem; /* Add top padding to avoid navbar overlap */
+            }
+
+            .text-image-pair {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            .text-image-pair:nth-child(even) {
+                flex-direction: row-reverse; /* Reverse order for alternating layout */
+            }
+
+            .text-section {
+                flex: 1;
+                padding: 1rem;
+                font-size: 1rem; /* Adjust font size for readability */
+            }
+
+            .image-section {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .image-section img {
+                max-width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+
+            @media (max-width: 768px) {
+                .text-image-pair {
+                    flex-direction: column; /* Stack elements vertically on smaller screens */
+                }
+
+                .text-image-pair:nth-child(even) {
+                    flex-direction: column; /* Ensure consistent stacking on smaller screens */
+                }
+
+                .image-section img {
+                    max-height: 200px; /* Reduce image size on smaller screens */
+                }
+            }
+            figcaption {
+                text-align: center;   /* Center-align the caption text */
+                font-size: 0.9rem;     /* Adjust font size */
+                color: #555;           /* Set caption text color */
+                margin-top: 1rem;    /* Add space between the image and the caption */
+                width: 70%;           /* Ensure the caption takes the full width */
+            }
+            .founding-statement {
+                text-align: center;
+                font-size: 1.5rem; /* Adjust font size for the statement */
+                font-weight: 600; /* Make the text bold */
+                color: #40391d; /* Match the main text color */
+                margin: 8rem 0 2rem;
+            }
+        </style>
+    </head>
+    <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+<body>
+    <div id="navbar"></div>
+    <div class="banner" style="background-image: url('aug2024images/IMG_1865.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+        <div class="content">
+            <h1>🤲 Donate 🤲</h1>
+        </div>
+    </div>
+    <p></p>
+        <div class="contact-details">
+            <p>Zelle® | (858) 833-6699</p>
+            <p></p>
+        </div>
+    </section>
+</body>
+</html>
