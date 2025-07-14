@@ -91,15 +91,19 @@
         #carousel {
             display: flex;
             flex-direction: column;
+            align-items: center; /* Center align images */
             transition: transform 0.5s ease;
             height: fit-content;
+            overflow: hidden; /* Ensure no overflow */
         }
-
+        
+        
         #carousel img {
             width: 100%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain; /* Prevent cropping */
             flex-shrink: 0;
+            padding: 10px; /* Optional spacing around images */
         }
 
         .video-section {
@@ -134,73 +138,53 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <div class="banner" style="background-image: url('images/IMG_0282.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
+    <div class="banner" style="background-image: url('images/feb25.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
         <div class="content">
-            <h1>Past Events</h1>
+            <h1>February 2025</h1>
         </div>
     </div>
+
     <div class="section">
-        <a href="jun25.html">
-            <h1>Senior Appreciation Concert '25</h1>
-        </a>
-            <h2>Summer Senior Sendoff Benefit Concert!</h2>
-            <p>June 7, 2025</p>
-        <a href="feb25.html">
-            <h1>Lunar New Year Celebration at Balboa Park</h1>
-        </a>
-            <h2>Balboa Park Outreach</h2>
-            <p>Feb 16, 2025</p>
-        <a href="dec24.html">
-            <h1>Holiday Concert at Ronald McDonald House</h1>
-        </a>
-            <h2>Winter/Holiday Concert 2024</h2>
-            <p>December 22, 2024</p>
-        <a href="aug24.html">
-            <h1>Instrument Exposition Summer 2024</h1>
-        </a>
-            <h2>Instrument Expo at 4S Ranch Library</h2>
-            <p>August 3, 2024</p>
-        <a href="may24.html">
-            <h1>Concert at Ronald McDonald House San Diego</h1>
-        </a>
-            <h2>Charity Concert at RMHCSD</h2>
-            <p>May 25, 2024</p>
-        <a href="feb24.html">
-            <h1>Chopstick Festival</h1>
-        </a>
-            <h2>Club Performance for Chinese Cultural Festival</h2>
-            <p>February 9, 2024</p>
-        <a href="jan24.html">
-            <h1>Concert at Scripps Miramar Ranch Library</h1>
-        </a>
-            <h2>Benefit Concert for Rady Children's</h2>
-            <p>January 19, 2024</p>
+        <h1>Lunar New Year Celebration at Balboa Park</h1>
+        <h2>Lunar New Year outreach quartet performance</h2>
+        <p>Fengyang Flower Drum & Butterfly Lovers</p>
+        <p>Feb 16, 2025</p>
+        <div class="split-section">
+            <div class="video-section">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/NFSvmmkuXR8?si=LO5HCvJeQo6jp6Eg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-section">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/l3S_Pgd6VSQ?si=TUF0OaCL9-vSBtpL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        
     </div>
-    
 
     <script>
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
-            })
-        document.addEventListener('DOMContentLoaded', () => {
-            const banner = document.querySelector('.banner');
-            const bannerHeight = banner.offsetHeight;
-        
-            // Ensure the banner starts with its top aligned to the top of the page
-            banner.style.backgroundPosition = 'top center';
-        
-            // Parallax effect on scroll
-            document.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-        
-                // Adjust the background position to create a parallax effect
-                // The background should move at half the scroll speed
-                const positionY = Math.min(scrollY * 0.5, bannerHeight);
-                banner.style.backgroundPosition = `center ${-positionY}px`;
             });
-        });
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                const banner = document.querySelector('.banner');
+                const bannerHeight = banner.offsetHeight;
+            
+                // Ensure the banner starts with its top aligned to the top of the page
+                banner.style.backgroundPosition = 'top center';
+            
+                // Parallax effect on scroll
+                document.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+            
+                    // Adjust the background position to create a parallax effect
+                    // The background should move at half the scroll speed
+                    const positionY = Math.min(scrollY * 0.5, bannerHeight);
+                    banner.style.backgroundPosition = `center ${-positionY}px`;
+                });
+            });
     </script>
 </body>
 </html>
